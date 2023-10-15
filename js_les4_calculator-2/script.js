@@ -23,6 +23,7 @@ if (typeAction === null || !(typeAction === `Add` || typeAction === `Diff` || ty
             if (typeAction === `Diff`) alert(`Diff of ${numberA} and ${numberB} is ${numberA - numberB}`);
             if (typeAction === `Mult`) alert(`Mult of ${numberA} and ${numberB} is ${numberA * numberB}`);
             if (typeAction === `Div`) alert(`Div of ${numberA} and ${numberB} is ${numberA / numberB}`);
+            alert(`Good by, see you later.`)
          }
       }
    } else {
@@ -33,6 +34,7 @@ if (typeAction === null || !(typeAction === `Add` || typeAction === `Diff` || ty
          if (typeAction === `Sqrt`) alert(`Sqrt of ${numberA} is ${numberA * numberA}`);
          if (typeAction === `Sin`) alert(`Sin of ${numberA} is ${Math.sin(numberA)}`);
          if (typeAction === `Cos`) alert(`Cos of ${numberA} is ${Math.cos(numberA)}`);
+         alert(`Good by, see you later.`)
       }
    }  
 }

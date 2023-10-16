@@ -31,10 +31,11 @@ if (typeAction === null || !(typeAction === `Add` || typeAction === `Diff` || ty
       if (isNaN(numberA)) {
          alert(`This is bad digit, good by`);
       } else {
-         if (typeAction === `Sqrt`) alert(`Sqrt of ${numberA} is ${numberA * numberA}`);
+         if (typeAction === `Sqrt`) alert(`Sqrt of √${numberA} is ${Math.sqrt(numberA)}`);
          if (typeAction === `Sin`) alert(`Sin of ${numberA} is ${Math.sin(numberA)}`);
          if (typeAction === `Cos`) alert(`Cos of ${numberA} is ${Math.cos(numberA)}`);
          alert(`Good by, see you later.`)
       }
    }  
 }
+

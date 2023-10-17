@@ -1,4 +1,3 @@
-
 'use strict';
 
 let numberA;
@@ -9,60 +8,76 @@ alert(`Welcome to calculator!`);
 typeAction = prompt(`What action you want to do? Add, Diff, Mult, Div, Sqrt, Sin, Cos`);
 
 switch (typeAction) {
-   // ! проверка на нажатие отмены.
    case null: {
       alert(`Good by, see you later.`);
       break;
    }
-   // todo проверка на правильное написание действия.
    case `Add`:
    case `Diff`:
    case `Mult`:
    case `Div`: {
-      // ? проверка на валидность числа A
-      numberA = parseFloat(prompt('Enter first number')) 
-      switch (isNaN(numberA)) {
+      numberA = parseFloat(prompt(`Enter first number`));
+      switch(isNaN(numberA)) {
          case true: {
             alert(`This is bad digit, good by`);
-            break
+            break;
          }
          default: {
-            // ? проверка на валидность числа B
-            numberB = parseFloat(prompt('Enter second number')) 
-            switch (isNaN(numberB)) {
+            numberB = parseFloat(prompt(`Enter second number`));
+            switch(isNaN(numberB)) {
                case true: {
                   alert(`This is bad digit, good by`);
-                  break
+                  break;
                }
                default: {
-                  // ? Операция над числами
                   alert(
-                     typeAction === 'Add'
+                     typeAction === `Add`
                      ? `Add of ${numberA} and ${numberB} is ${numberA + numberB}`
-                     : typeAction === 'Diff'
+                     : typeAction === `Diff`
                      ? `Diff of ${numberA} and ${numberB} is ${numberA - numberB}`
-                     : typeAction === 'Mult'
+                     : typeAction === `Mult`
                      ? `Mult of ${numberA} and ${numberB} is ${numberA * numberB}`
-                     : typeAction === 'Div'
+                     : typeAction === `Div`
                      ? `Div of ${numberA} and ${numberB} is ${numberA / numberB}`
-                     : 'This is bad digit, good by'
+                     : `This is bad digit, good by`
                   ); 
-                  break
+                  alert(`Good by, see you later.`);
+                  break;
                }
             }
+            break;
          }
-      } 
+      }
+      break;
    }
    case `Sqrt`:
    case `Sin`:
    case `Cos`: {
-      
-      break
+      numberA = parseFloat(prompt(`Enter number`))
+      switch(isNaN(numberA)) {
+         case true: {
+            alert(`This is bad digit, good by`);
+            break;
+         }
+         default: {
+            alert(
+               typeAction === `Sqrt`
+               ? `Sqrt of √${numberA} is ${Math.sqrt(numberA)}`
+               : typeAction === `Sin`
+               ? `Sin of ${numberA} is ${Math.sin(numberA)}`
+               : typeAction === `Cos`
+               ? `Cos of ${numberA} is ${Math.cos(numberA)}`
+               : `This is bad digit, good by`
+            );
+            alert(`Good by, see you later.`);
+            break;
+         }
+      }
+      break;
    }
-   // todo не валидное действие.
    default: {
       alert(`Good by, see you later.`);
-      break
+      break;
    }
 }
 

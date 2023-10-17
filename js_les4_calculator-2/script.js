@@ -38,4 +38,3 @@ if (typeAction === null || !(typeAction === `Add` || typeAction === `Diff` || ty
       }
    }  
 }
-

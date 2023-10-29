@@ -3,9 +3,10 @@
 alert('Welcome to calculator!');
 
 let startCalc = true;
+const history = [];
 
 calculator: do {
-   const typeAction = prompt(`What action you want to do? Add, Diff, Mult, Div, Sqrt, Sin, Cos`);
+   const typeAction = prompt(`What action you want to do? Add, Diff, Mult, Div, Sqrt, Sin, Cos${history.length > 0 ? `, (${history.length})History` : ``}`);
    if (typeAction) {
       const normAction = typeAction.toLowerCase();
       switch (normAction) {
@@ -49,10 +50,30 @@ calculator: do {
             } while (!Number.isInteger(numberB));
 
             switch (normAction) {
-               case `add`: alert(`Sum of ${numberA} and ${numberB} is ${numberA + numberB}`); break;
-               case `diff`: alert(`Diff of ${numberA} and ${numberB} is ${numberA - numberB}`); break;
-               case `mult`: alert(`Miff of ${numberA} and ${numberB} is ${numberA * numberB}`); break;
-               case `div`: alert(`Div of ${numberA} and ${numberB} is ${numberA / numberB}`); break;
+               case `add`: {
+                  let action = `Sum: ${numberA} + ${numberB} = ${numberA + numberB}`;
+                  alert(action); 
+                  history.push(action)
+                  break;
+               } 
+               case `diff`: {
+                  let action = `Diff: ${numberA} - ${numberB} = ${numberA - numberB}`;
+                  alert(action); 
+                  history.push(action)
+                  break;
+               } 
+               case `mult`: {
+                  let action = `Mult: ${numberA} * ${numberB} = ${numberA * numberB}`;
+                  alert(action); 
+                  history.push(action)
+                  break;
+               }
+               case `div`: {
+                  let action = `Div: ${numberA} / ${numberB} = ${numberA / numberB}`;
+                  alert(action); 
+                  history.push(action)
+                  break;
+               } 
                default: alert(`Ups somethings went wrong`); break;
             }
 
@@ -85,14 +106,46 @@ calculator: do {
 
             switch (normAction) {
                case 'sqrt': {
-                  (number >= 0)
-                  ? alert(`Root of ${number} is ${Math.sqrt(number)}`)
-                  : alert('Number must to be positive');
+                  if (number >= 0) {
+                     let action = `sqrt: √${number} = ${Math.sqrt(number)}`
+                     alert(action);
+                     history.push(action)
+                  } else {
+                     alert('Number must to be positive');
+                  }
+                  break
                }
-               case 'sin': alert(`Sin of ${number} is ${Math.sin(number)}`); break;
-               case 'cos': alert(`Cos of ${number} is ${Math.cos(number)}`); break;
+               case 'sin': {
+                  let action = `Sin: ${number} = ${Math.sin(number)}`
+                  alert(action);
+                  history.push(action);
+                  break;
+               }
+               case 'cos': {
+                  let action = `Cos: ${number} = ${Math.cos(number)}`
+                  alert(action);
+                  history.push(action);
+                  break;
+               }
             }
             
+            break;
+         }
+         case `history`: {
+            if (!history.length) {
+               alert(`you haven't done any operations yet`)
+               break;
+            }
+            let historyList = `Your operations:\n\n`;
+            history.forEach((element, index) => {
+               historyList += `${index + 1}. ${element}\n`;
+            });
+            alert(historyList);
+
+            startCalc = confirm(`Do you want continue work with me?`);
+            if (!startCalc) {
+               alert(`Good by, see you later.`);
+            }
             break;
          }
          default: {

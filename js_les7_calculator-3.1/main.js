@@ -107,7 +107,7 @@ calculator: do {
             switch (normAction) {
                case 'sqrt': {
                   if (number >= 0) {
-                     let action = `sqrt: √${number} = ${Math.sqrt(number)}`
+                     let action = `Sqrt: √${number} = ${Math.sqrt(number)}`
                      alert(action);
                      history.push(action)
                   } else {

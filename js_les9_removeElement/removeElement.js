@@ -19,4 +19,11 @@ const arr = [1, [1, 4, 3], 5, 3, [1, 2, 3], 5, 6, `wasd`, [1, 2, 3], 43, `wasd`]
 
 const copyArr = removeElement(arr, [1, 2, 3]);
 console.log(copyArr);
+
+const copyArr1 = removeElement(arr, 5);
+console.log(copyArr1);
+
+const copyArr2 = removeElement(arr, `wasd`);
+console.log(copyArr2);
+
 console.log(arr);

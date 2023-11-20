@@ -63,7 +63,6 @@ class Student {
     }
 }
 
-  // Пример использования
 const student1 = new Student("Иван", "Иванов", 2000);
 const student2 = new Student("Петр", "Петров", 1999);
 const student3 = new Student("Мария", "Сидорова", 2001);

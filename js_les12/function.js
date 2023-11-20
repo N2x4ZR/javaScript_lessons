@@ -26,7 +26,6 @@ House.prototype.addApartment = function (apartment) {
     }
 }
 
-
 let person1 = new Human(`Назар`, `Мужчина`);
 let person2 = new Human(`Марина`, `Женщина`);
 let person3 = new Human(`Петр`, `Мужчина`);

@@ -29,7 +29,6 @@ class Hamburger {
     }
 }
 
-// Приклад використання:
 var hamburger = new Hamburger(Hamburger.SIZE_SMALL, Hamburger.STUFFING_CHEESE);
 
 hamburger.addTopping(Hamburger.TOPPING_MAYO);
